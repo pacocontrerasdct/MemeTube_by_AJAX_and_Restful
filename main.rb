@@ -34,7 +34,7 @@ get '/index/:id' do
   if  request.xhr?
     json @item.entries
   else
-    erb index
+    erb index:id
   end
 end
 

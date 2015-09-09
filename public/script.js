@@ -32,23 +32,15 @@ function getVideoList() {
 }
 
 function appendTube(video) {
-  $('<li><div id="v_container"><div id="v_container_right"><p><span class="yellow">[A]rtist: </span>' + video.artist + '</p><p><span class="yellow">[T]itle: </span>' + video.title + '</p><p><span class="yellow">[D]escription: </span>' + video.description + '</p><p><span class="yellow">[G]enre: </span>' + video.genre + '</p><p><a href="/index/' + video.id + '" data-id="' + video.id + '">[WATCH]</a></p></div></div></li>').prependTo("#video-list")
+  $('<li><div id="v_container"><div id="v_container_right"><p><span class="yellow">[A]rtist: </span>' + video.artist + '</p><p><span class="yellow">[T]itle: </span>' + video.title + '</p><p><span class="yellow">[D]escription: </span>' + video.description + '</p><p><span class="yellow">[G]enre: </span>' + video.genre + '</p><p><a href="/index/:id" id="' + video.id + '">[WATCH]</a></p></div></div></li>').prependTo("#video-list")
 }
 
 function showVideo(){
-  data = {}
-  console.log($this)
   videoId = $(this);
   console.log(videoId)
-  // AJAX calling to DB to get videos
-  $.ajax({
-    method: 'GET',
-    url: '/index/' + videoId,
-    dataType: 'json',
-    data: videoId
-  }).done(function(response) {
-    console.log(response);
-  })
+  debugger;
+  
+  
 }
 
 
